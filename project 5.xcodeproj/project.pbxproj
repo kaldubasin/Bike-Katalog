@@ -13,6 +13,11 @@
 		35A381062788985700C52987 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35A381042788985700C52987 /* Main.storyboard */; };
 		35A381082788985A00C52987 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35A381072788985A00C52987 /* Assets.xcassets */; };
 		35A3810B2788985A00C52987 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35A381092788985A00C52987 /* LaunchScreen.storyboard */; };
+		35A381132788992600C52987 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A381122788992600C52987 /* Model.swift */; };
+		35A3811727889B4F00C52987 /* NewCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A3811527889B4F00C52987 /* NewCardViewController.swift */; };
+		35A3811827889B4F00C52987 /* NewCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35A3811627889B4F00C52987 /* NewCardViewController.xib */; };
+		35A381A52790ACFC00C52987 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A381A32790ACFC00C52987 /* CatalogViewController.swift */; };
+		35A381A62790ACFC00C52987 /* CatalogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35A381A42790ACFC00C52987 /* CatalogViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		35A381072788985A00C52987 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35A3810A2788985A00C52987 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35A3810C2788985A00C52987 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35A381122788992600C52987 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		35A3811527889B4F00C52987 /* NewCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardViewController.swift; sourceTree = "<group>"; };
+		35A3811627889B4F00C52987 /* NewCardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewCardViewController.xib; sourceTree = "<group>"; };
+		35A381A32790ACFC00C52987 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
+		35A381A42790ACFC00C52987 /* CatalogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatalogViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +69,33 @@
 				35A380FE2788985700C52987 /* AppDelegate.swift */,
 				35A381002788985700C52987 /* SceneDelegate.swift */,
 				35A381022788985700C52987 /* ViewController.swift */,
+				35A381A22790ACD600C52987 /* CatalogViewController */,
 				35A381042788985700C52987 /* Main.storyboard */,
+				35A3811427889ACD00C52987 /* NewCardView */,
+				35A381122788992600C52987 /* Model.swift */,
 				35A381072788985A00C52987 /* Assets.xcassets */,
 				35A381092788985A00C52987 /* LaunchScreen.storyboard */,
 				35A3810C2788985A00C52987 /* Info.plist */,
 			);
 			path = "project 5";
+			sourceTree = "<group>";
+		};
+		35A3811427889ACD00C52987 /* NewCardView */ = {
+			isa = PBXGroup;
+			children = (
+				35A3811527889B4F00C52987 /* NewCardViewController.swift */,
+				35A3811627889B4F00C52987 /* NewCardViewController.xib */,
+			);
+			path = NewCardView;
+			sourceTree = "<group>";
+		};
+		35A381A22790ACD600C52987 /* CatalogViewController */ = {
+			isa = PBXGroup;
+			children = (
+				35A381A32790ACFC00C52987 /* CatalogViewController.swift */,
+				35A381A42790ACFC00C52987 /* CatalogViewController.xib */,
+			);
+			path = CatalogViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,7 +155,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35A381A62790ACFC00C52987 /* CatalogViewController.xib in Resources */,
 				35A3810B2788985A00C52987 /* LaunchScreen.storyboard in Resources */,
+				35A3811827889B4F00C52987 /* NewCardViewController.xib in Resources */,
 				35A381082788985A00C52987 /* Assets.xcassets in Resources */,
 				35A381062788985700C52987 /* Main.storyboard in Resources */,
 			);
@@ -137,9 +170,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35A381A52790ACFC00C52987 /* CatalogViewController.swift in Sources */,
 				35A381032788985700C52987 /* ViewController.swift in Sources */,
+				35A3811727889B4F00C52987 /* NewCardViewController.swift in Sources */,
 				35A380FF2788985700C52987 /* AppDelegate.swift in Sources */,
 				35A381012788985700C52987 /* SceneDelegate.swift in Sources */,
+				35A381132788992600C52987 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +325,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7XT7K8G3NJ;
 				INFOPLIST_FILE = "project 5/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,6 +345,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7XT7K8G3NJ;
 				INFOPLIST_FILE = "project 5/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
