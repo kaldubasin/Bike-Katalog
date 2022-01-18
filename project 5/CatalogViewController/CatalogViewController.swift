@@ -25,9 +25,6 @@ class CatalogViewController: UIViewController {
     @IBAction func backButtonTap() {
         self.dismiss(animated: false, completion: nil)
     }
-//    добавить на второй экран
-    
-  
 }
 
 
@@ -47,6 +44,15 @@ extension CatalogViewController: UITableViewDelegate , UITableViewDataSource {
         return cell
     }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let bike = bikes [indexPath.row]
+        let vc = NewCardViewController()
+        vc.creatableBike = bike
+        vc.isCreate = false
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: false, completion: nil)
+    }
     
 }
 

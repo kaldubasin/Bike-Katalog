@@ -11,7 +11,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewCardViewController" customModule="project_5" customModuleProvider="target">
             <connections>
+                <outlet property="addButton" destination="r9c-nA-J38" id="eJN-Kl-0Xj"/>
+                <outlet property="bikeImage" destination="2qE-7Q-LAM" id="VfQ-ir-VRE"/>
+                <outlet property="brandTextField" destination="3fb-41-6nH" id="s08-hW-qOf"/>
+                <outlet property="fixieblaLabel" destination="uP5-Xq-bBD" id="HS7-tX-SaL"/>
+                <outlet property="fixiebleSwitch" destination="hR1-oB-14f" id="zbo-ak-zUv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="wheelSizeTextField" destination="Nm0-pD-NnS" id="Xmy-E4-01U"/>
+                <outlet property="yearTextField" destination="vsB-zC-1DO" id="wnT-IS-jip"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -19,35 +26,35 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2qE-7Q-LAM">
-                    <rect key="frame" x="31" y="81" width="352" height="297"/>
-                </imageView>
-                <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Год выпуска" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vsB-zC-1DO">
-                    <rect key="frame" x="39" y="442" width="336" height="34"/>
+                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Год выпуска" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vsB-zC-1DO">
+                    <rect key="frame" x="39" y="102" width="336" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Бренд" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3fb-41-6nH">
-                    <rect key="frame" x="39" y="524" width="336" height="34"/>
+                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Бренд" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3fb-41-6nH">
+                    <rect key="frame" x="39" y="184" width="336" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hR1-oB-14f">
-                    <rect key="frame" x="48" y="694" width="51" height="31"/>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hR1-oB-14f">
+                    <rect key="frame" x="48" y="354" width="51" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="switchActionButton:" destination="-1" eventType="valueChanged" id="HcA-bW-cic"/>
+                    </connections>
                 </switch>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9c-nA-J38">
-                    <rect key="frame" x="115" y="764" width="184" height="80"/>
-                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" title="Добавить"/>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Fixieble" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uP5-Xq-bBD">
-                    <rect key="frame" x="124" y="670" width="166" height="79"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fixieble" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uP5-Xq-bBD">
+                    <rect key="frame" x="135" y="359" width="166" height="20.5"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Размер колеса" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nm0-pD-NnS">
-                    <rect key="frame" x="39" y="599" width="336" height="34"/>
+                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Размер колеса" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nm0-pD-NnS">
+                    <rect key="frame" x="39" y="259" width="336" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                 </textField>
@@ -59,34 +66,23 @@
                         <action selector="NewCardBackButton:" destination="-1" eventType="touchUpInside" id="RQ3-8q-jJt"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9c-nA-J38">
+                    <rect key="frame" x="107" y="422" width="184" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Добавить"/>
+                    <connections>
+                        <action selector="addButtonTap:" destination="-1" eventType="touchUpInside" id="SHn-Tk-GoA"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2qE-7Q-LAM">
+                    <rect key="frame" x="30" y="474" width="364" height="388"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <constraints>
-                <constraint firstItem="uP5-Xq-bBD" firstAttribute="width" secondItem="hR1-oB-14f" secondAttribute="width" multiplier="3.38298" id="2EC-52-bwp"/>
-                <constraint firstItem="Nm0-pD-NnS" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="2Xk-wY-ebM"/>
-                <constraint firstItem="uP5-Xq-bBD" firstAttribute="leading" secondItem="hR1-oB-14f" secondAttribute="trailing" constant="27" id="4vw-Iw-yir"/>
-                <constraint firstItem="vsB-zC-1DO" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="5eI-6F-lhJ"/>
-                <constraint firstItem="r9c-nA-J38" firstAttribute="top" secondItem="uP5-Xq-bBD" secondAttribute="bottom" constant="15" id="92b-fS-6JJ"/>
-                <constraint firstItem="Nm0-pD-NnS" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.811594" id="F9A-Yn-2Bp"/>
-                <constraint firstItem="uP5-Xq-bBD" firstAttribute="top" secondItem="Nm0-pD-NnS" secondAttribute="bottom" constant="37" id="G0y-0C-kNB"/>
-                <constraint firstItem="vsB-zC-1DO" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Hq2-ja-hPM"/>
-                <constraint firstItem="2qE-7Q-LAM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="37" id="IbD-AP-Uze"/>
-                <constraint firstItem="3fb-41-6nH" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Ilf-yK-Meb"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2qE-7Q-LAM" secondAttribute="trailing" constant="31" id="Kg2-jo-mfC"/>
-                <constraint firstItem="2qE-7Q-LAM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="31" id="NU1-EK-cNB"/>
-                <constraint firstItem="r9c-nA-J38" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="SbD-eX-53U"/>
-                <constraint firstItem="uP5-Xq-bBD" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Tpt-7Z-Oge"/>
-                <constraint firstItem="vsB-zC-1DO" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.811594" id="Wt5-NQ-z3g"/>
-                <constraint firstItem="3fb-41-6nH" firstAttribute="top" secondItem="vsB-zC-1DO" secondAttribute="bottom" constant="48" id="XgV-LA-UNV"/>
-                <constraint firstItem="vsB-zC-1DO" firstAttribute="top" secondItem="2qE-7Q-LAM" secondAttribute="bottom" constant="64" id="fNA-0M-Fqo"/>
-                <constraint firstItem="r9c-nA-J38" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.444444" id="fyZ-Ta-6kb"/>
-                <constraint firstItem="Nm0-pD-NnS" firstAttribute="top" secondItem="3fb-41-6nH" secondAttribute="bottom" constant="41" id="m34-6e-FCQ"/>
-                <constraint firstItem="3fb-41-6nH" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.811594" id="mbr-3E-5mx"/>
-                <constraint firstItem="hR1-oB-14f" firstAttribute="top" secondItem="Nm0-pD-NnS" secondAttribute="bottom" constant="61" id="qrF-hC-GHN"/>
-                <constraint firstItem="2qE-7Q-LAM" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="sIz-gA-hfo"/>
-                <constraint firstItem="hR1-oB-14f" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.118357" id="yGv-4q-Hqu"/>
-            </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="103.79464285714285"/>
         </view>
     </objects>

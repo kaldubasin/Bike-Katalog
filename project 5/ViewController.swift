@@ -41,6 +41,7 @@ class ViewController: UIViewController {
     @IBAction func catalog(_ sender: UIButton) {
         let vc = CatalogViewController ()
         vc.bikes = self.bikes
+        //передаем массив в вью контроллер
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: false, completion: nil)
         
