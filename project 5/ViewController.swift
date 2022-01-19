@@ -34,13 +34,15 @@ class ViewController: UIViewController {
         bikes.append (model8)
         bikes.append (model9)
         bikes.append (model10)
+        
+        DataService.shared.bikes = bikes
     }
 
     
 
     @IBAction func catalog(_ sender: UIButton) {
         let vc = CatalogViewController ()
-        vc.bikes = self.bikes
+//        vc.bikes = self.bikes
         //передаем массив в вью контроллер
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: false, completion: nil)

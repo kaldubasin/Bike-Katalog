@@ -39,6 +39,7 @@ class NewCardViewController: UIViewController {
             fixiebleSwitch.isHidden = true
             addButton.isHidden = true
             getInfo()
+            
         }
     }
     
@@ -47,9 +48,40 @@ class NewCardViewController: UIViewController {
         brandTextField.text = creatableBike.brand
         wheelSizeTextField.text = "\(creatableBike.wheelSize)"
         fixieblaLabel.text = creatableBike.fixie ? "фикс" : "не фикс"
-        bikeImage.image = UIImage(named: creatableBike.photoName)
+        let newBikeImage = DataService.loadImage(name: creatableBike.photoName)
+        bikeImage.image = newBikeImage ?? UIImage(named: creatableBike.photoName)
         bikeImage.backgroundColor = .none
     }
+    
+    
+    func saveNewBike() {
+        guard yearTextField.text != ""  else {
+            showAlert(title: "Внимание", message: "Год не заполнен")
+            return
+        }
+        guard let year : Int = Int(yearTextField.text!)  else {
+            showAlert(title: "Внимание", message: "Введите цифры")
+            return
+        }
+        guard let brand = brandTextField.text, brand != "" else {
+            showAlert(title: "Внимание", message: "Введите бренд велосипеда")
+            return
+        }
+        guard wheelSizeTextField.text != ""  else {
+            showAlert(title: "Внимание", message: "Введите размер колеса")
+            return
+        }
+        guard let wheel : Int = Int(wheelSizeTextField.text!)  else {
+            showAlert(title: "Внимание", message: "Введите цифры")
+            return
+        }
+        let nameImage = String(Int(Date().timeIntervalSince1970))
+        DataService.saveImageDocumentDirectory(tempImage: bikeImage.image!, name: nameImage)
+        
+        let newBike = Bikes(year: year, wheelSize: wheel, brand: brand, photoName: nameImage, fixie: fixiebleSwitch.isOn)
+        DataService.shared.bikes.append(newBike)
+    }
+    
     
     
     @IBAction func NewCardBackButton(_ sender: UIButton) {
@@ -71,6 +103,8 @@ class NewCardViewController: UIViewController {
 //        newBike.year = Int(yearTextField.text)
 //        newBike.wheelSize = Int(wheelSizeTextField.text)
 //        fixiebleSwitch.isOn ? newBike.fixie == true : newBike.fixie == false
+        saveNewBike ()
+        self.dismiss(animated: false, completion: nil)
         
     }
 }
@@ -83,6 +117,7 @@ class NewCardViewController: UIViewController {
 
     if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
         bikeImage.image = image
+        
  }
  picker.dismiss(animated: true, completion: nil)
  }
@@ -91,4 +126,6 @@ class NewCardViewController: UIViewController {
  picker.dismiss(animated: true, completion: nil)
  }
  }
+
+
  

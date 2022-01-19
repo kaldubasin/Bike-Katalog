@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		355C11F82798722B0037BBE4 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C11F72798722B0037BBE4 /* Extentions.swift */; };
+		355C11FA279878D90037BBE4 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C11F9279878D90037BBE4 /* DataService.swift */; };
 		35A380FF2788985700C52987 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A380FE2788985700C52987 /* AppDelegate.swift */; };
 		35A381012788985700C52987 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A381002788985700C52987 /* SceneDelegate.swift */; };
 		35A381032788985700C52987 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A381022788985700C52987 /* ViewController.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		355C11F72798722B0037BBE4 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
+		355C11F9279878D90037BBE4 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		35A380FB2788985700C52987 /* project 5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "project 5.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35A380FE2788985700C52987 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35A381002788985700C52987 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,9 +70,11 @@
 		35A380FD2788985700C52987 /* project 5 */ = {
 			isa = PBXGroup;
 			children = (
+				355C11F9279878D90037BBE4 /* DataService.swift */,
 				35A380FE2788985700C52987 /* AppDelegate.swift */,
 				35A381002788985700C52987 /* SceneDelegate.swift */,
 				35A381022788985700C52987 /* ViewController.swift */,
+				355C11F72798722B0037BBE4 /* Extentions.swift */,
 				35A381A22790ACD600C52987 /* CatalogViewController */,
 				35A381042788985700C52987 /* Main.storyboard */,
 				35A3811427889ACD00C52987 /* NewCardView */,
@@ -175,7 +181,9 @@
 				35A3811727889B4F00C52987 /* NewCardViewController.swift in Sources */,
 				35A380FF2788985700C52987 /* AppDelegate.swift in Sources */,
 				35A381012788985700C52987 /* SceneDelegate.swift in Sources */,
+				355C11FA279878D90037BBE4 /* DataService.swift in Sources */,
 				35A381132788992600C52987 /* Model.swift in Sources */,
+				355C11F82798722B0037BBE4 /* Extentions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

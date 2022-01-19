@@ -17,6 +17,8 @@ class CatalogViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        bikes = DataService.shared.bikes
+        
         table.delegate = self
         table.dataSource = self
         
@@ -36,11 +38,12 @@ extension CatalogViewController: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
         let bike = bikes [indexPath.row]
+        let bikeImage = DataService.loadImage(name: bike.photoName)
         cell.textLabel?.text = bike.brand
         cell.accessoryType = bike.fixie ? .checkmark : .none
         cell.detailTextLabel?.text = "Year: \(bike.year), Wheel size \(bike.wheelSize)"
         cell.backgroundColor = indexPath.row % 2 == 0 ? .lightGray : .white
-        cell.imageView?.image = UIImage(named: bike.photoName)
+        cell.imageView?.image = bikeImage ?? UIImage(named: bike.photoName)
         return cell
     }
     
