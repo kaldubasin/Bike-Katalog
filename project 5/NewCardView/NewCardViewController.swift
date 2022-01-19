@@ -14,15 +14,16 @@ class NewCardViewController: UIViewController {
     @IBOutlet weak var wheelSizeTextField: UITextField!
     
     @IBOutlet weak var fixiebleSwitch: UISwitch!
-    
     @IBOutlet weak var fixieblaLabel: UILabel!
     
-    @IBOutlet weak var addButton: UIButton!
     
+    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var bikeImage: UIImageView!
     
     var creatableBike : Bikes!
     var isCreate : Bool = true
+//    var newBike = Bikes(year: 0, wheelSize: 0, brand: "none", photoName: "none", fixie: true)
+//
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,11 +58,37 @@ class NewCardViewController: UIViewController {
     
     @IBAction func switchActionButton(_ sender: UISwitch) {
     }
-    
-    @IBAction func addButtonTap(_ sender: UIButton) {
+    @IBAction func addImageTap(_ sender: UIButton) {
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.delegate = self
+        vc.allowsEditing = true
+        present (vc, animated:true)
     }
     
-    
-    
-    
+    @IBAction func addButtonTap(_ sender: UIButton) {
+//        newBike.brand = brandTextField.text
+//        newBike.year = Int(yearTextField.text)
+//        newBike.wheelSize = Int(wheelSizeTextField.text)
+//        fixiebleSwitch.isOn ? newBike.fixie == true : newBike.fixie == false
+        
+    }
 }
+
+
+ extension NewCardViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+ func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:
+ [UIImagePickerController.InfoKey : Any]) {
+
+    if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+        bikeImage.image = image
+ }
+ picker.dismiss(animated: true, completion: nil)
+ }
+
+ func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
+ picker.dismiss(animated: true, completion: nil)
+ }
+ }
+ 
