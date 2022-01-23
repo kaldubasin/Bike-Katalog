@@ -98,10 +98,39 @@ extension CatalogViewController: UITableViewDelegate , UITableViewDataSource {
         let action = UIContextualAction(style: .normal, title: "зафиксировали"){
             (action, view, completion)  in
             print("Выполнение кода")
+            self.bikes[indexPath.row].fixie.toggle()
+            DataService.shared.bikes = self.bikes
+            self.table.reloadData()
+            //self.table.reloadRows(at: [indexPath], with: .automatic) //попробовать разные анимации и посмотреть работает ли с ними
+        }
+        action.backgroundColor = .green
+        return action
+    }
+    
+    func deleteBikes(at indexPath: IndexPath)-> UIContextualAction{
+        let action = UIContextualAction(style: .normal, title: "удалить"){
+            (action, view, completion)  in
+            print("удаление")
+            self.alertAscConfirmation(title: "Внимание", message: "Точно удаляем?"){
+                result in
+                if result {
+                    self.bikes.remove(at: indexPath.row) //удаляем сначала из локального массива!!!
+                    DataService.shared.bikes = self.bikes
+                    self.table.deleteRows(at: [indexPath], with: .bottom)
+                } else {
+                     self.table.reloadData() // перезагружаем таблицу что бы не было видно удаления
+                }
+            }
+
             
         }
-        
+        action.backgroundColor = .red
         return action
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let fix = deleteBikes (at: indexPath)
+        return UISwipeActionsConfiguration(actions: [fix])
     }
     
 }

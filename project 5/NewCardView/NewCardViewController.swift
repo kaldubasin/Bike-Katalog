@@ -76,12 +76,16 @@ class NewCardViewController: UIViewController {
             return
         }
         
-         
+        if bikeImage.image == nil {
+            showAlert(title: "Внимание", message: "Добавьте фото")
+            return
+        } else {
         let nameImage = String(Int(Date().timeIntervalSince1970))
             DataService.saveImageDocumentDirectory(tempImage: bikeImage.image!, name: nameImage)
         
         let newBike = Bikes(year: year, wheelSize: wheel, brand: brand, photoName: nameImage, fixie: fixiebleSwitch.isOn)
         DataService.shared.bikes.append(newBike)
+    }
     }
     
     
