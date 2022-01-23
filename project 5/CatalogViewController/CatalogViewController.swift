@@ -11,6 +11,7 @@ class CatalogViewController: UIViewController {
 
     
     @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var editeButtonOutlete: UIButton!
     
     var bikes : [Bikes] = []
     
@@ -27,7 +28,19 @@ class CatalogViewController: UIViewController {
     @IBAction func backButtonTap() {
         self.dismiss(animated: false, completion: nil)
     }
+    
+    @IBAction func editeAction(_ sender: UIButton) {
+        table.isEditing.toggle()
+        if table.isEditing {
+            editeButtonOutlete.setTitle("Ok", for: .normal)
+        } else {
+            editeButtonOutlete.setTitle("Edite", for: .normal)
+            DataService.shared.bikes = bikes
+        }
+    }
 }
+
+
 
 
 extension CatalogViewController: UITableViewDelegate , UITableViewDataSource {
@@ -55,6 +68,40 @@ extension CatalogViewController: UITableViewDelegate , UITableViewDataSource {
         vc.isCreate = false
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: false, completion: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true // возможность перемещать ячейки в режиме редактирования
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        .none // скрывает значек делит
+    }
+    
+    func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false // убирает смещение данных влево
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let elementToMove = bikes[sourceIndexPath.row]
+        bikes.remove(at: sourceIndexPath.row)
+        bikes.insert(elementToMove, at: destinationIndexPath.row)
+    } // изменяем последовательность строк в момент работы с экраном
+    
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let fix = fixProperty (at: indexPath)
+        return UISwipeActionsConfiguration(actions: [fix])
+    }
+    
+    func fixProperty (at indexPath: IndexPath)-> UIContextualAction {
+        let action = UIContextualAction(style: .normal, title: "зафиксировали"){
+            (action, view, completion)  in
+            print("Выполнение кода")
+            
+        }
+        
+        return action
     }
     
 }

@@ -19,7 +19,7 @@ func getImageURL(name: String) -> URL?{
             print("Url = ", fileURL)
             return fileURL
         } else {
-            print("Файл не найден")
+           // print("Файл не найден")
             return nil
         }
     }
@@ -45,18 +45,18 @@ func getImageURL(name: String) -> URL?{
         }
     }
     
-//    static func removeDocumentDirectory(name: String){
-//        DispatchQueue.main.async {
-//            let documentsDirectoryURL = try! FileManager().url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-//            let fileURL = documentsDirectoryURL.appendingPathComponent(name + ".png")
-//            do {
-//                try FileManager.default.removeItem(at: fileURL)
-//                print("File REMOVED !")
-//            } catch {
-//                print(error.localizedDescription)
-//            }
-//        }
-//    }
+    static func removeDocumentDirectory(name: String){
+        DispatchQueue.main.async {
+            let documentsDirectoryURL = try! FileManager().url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let fileURL = documentsDirectoryURL.appendingPathComponent(name + ".png")
+            do {
+                try FileManager.default.removeItem(at: fileURL)
+                print("File REMOVED !")
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
 
 
 }

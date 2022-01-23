@@ -37,7 +37,7 @@ class NewCardViewController: UIViewController {
             brandTextField.isEnabled = false
             wheelSizeTextField.isEnabled = false
             fixiebleSwitch.isHidden = true
-            addButton.isHidden = true
+            addButton.setTitle("Удалить", for: .normal)
             getInfo()
             
         }
@@ -75,13 +75,20 @@ class NewCardViewController: UIViewController {
             showAlert(title: "Внимание", message: "Введите цифры")
             return
         }
+        
+         
         let nameImage = String(Int(Date().timeIntervalSince1970))
-        DataService.saveImageDocumentDirectory(tempImage: bikeImage.image!, name: nameImage)
+            DataService.saveImageDocumentDirectory(tempImage: bikeImage.image!, name: nameImage)
         
         let newBike = Bikes(year: year, wheelSize: wheel, brand: brand, photoName: nameImage, fixie: fixiebleSwitch.isOn)
         DataService.shared.bikes.append(newBike)
     }
     
+    
+    func deleteNewBike() {
+        
+        
+    }
     
     
     @IBAction func NewCardBackButton(_ sender: UIButton) {
